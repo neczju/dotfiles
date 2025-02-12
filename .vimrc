@@ -19,11 +19,11 @@ let lspServers = [#{
 	\	  args: ['--background-index', '--clang-tidy']
 	\ },
     \ #{
-    \    name: 'pylsp',
-    \    filetype: ['python'],
-    \    path: '/usr/bin/pylsp',
-    \    args: [],
-   \ }]
+    \     name: 'pylsp',
+    \     filetype: ['python'],
+    \     path: '/usr/bin/pylsp',
+    \     args: [],
+    \ }]
 autocmd User LspSetup call LspAddServer(lspServers)
 
 " settings
