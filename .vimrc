@@ -3,8 +3,8 @@
 " vim-plug
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
 Plug 'yegappan/lsp'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
@@ -23,6 +23,13 @@ let lspServers = [#{
     \     filetype: ['python'],
     \     path: '/usr/bin/pylsp',
     \     args: [],
+    \ },
+    \ #{
+    \     name: 'rustanalyzer',
+    \     filetype: ['rust'],
+    \     path: '/usr/bin/rust-analyzer',
+    \     args: [],
+    \     syncInti: v:true
     \ }]
 autocmd User LspSetup call LspAddServer(lspServers)
 
@@ -48,6 +55,5 @@ set wildmode=list:longest
 
 " Colorscheme
 set background=dark
-let g:gruvbox_sign_column = "bg0"
-let g:gruvbox_contrast_dark = "hard"
-colorscheme gruvbox 
+colorscheme jellybeans
+hi SignColumn guibg=#151515
